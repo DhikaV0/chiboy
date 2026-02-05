@@ -5,10 +5,20 @@ import Image from "next/image";
 export default function ProdukPage() {
   return (
     <>
-      <section className="bg-[var(--brand-yellow)]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <h1 className="text-4xl font-bold">Produk Chiboy</h1>
-          <p className="mt-4 max-w-2xl text-slate-700">
+      <section className="relative h-[60vh] min-h-[400px] text-white">
+        <Image
+          src="/banner-chiboy.png"
+          alt="Banner Chiboy"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
+          <h1 className="text-4xl md:text-5xl font-bold max-w-3xl">
+            Produk Chiboy
+          </h1>
+          <p className="mt-4 max-w-2xl text-white">
             Chiboy menghadirkan produk cilok dan bakso colok dengan cita rasa
             khas, berkualitas, dan aman dikonsumsi.
           </p>
@@ -32,7 +42,7 @@ export default function ProdukPage() {
         </div>
       </section>
 
-      <section className="bg-slate-50">
+      <section className="bg-white">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <h2 className="text-3xl font-bold mb-10 text-center text-slate-800">
             Keunggulan Produk

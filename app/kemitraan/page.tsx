@@ -1,10 +1,52 @@
 import CTA from "@/components/sections/CTA";
+import Image from "next/image";
+
+const packages = [
+  {
+    title: "RESELLER",
+    price: "Mulai Rp1.200.000",
+    items: [
+      "Booth portable aluminium",
+      "Peralatan kukus & kompor",
+      "Bahan baku awal",
+      "Dokumen kemitraan & SOP",
+    ],
+  },
+  {
+    title: "AGEN",
+    price: "Mulai Rp7.500.000",
+    items: [
+      "10 Booth portable",
+      "Freezer minimal 450L",
+      "Perlengkapan branding",
+      "Pendampingan tim manajemen",
+    ],
+  },
+  {
+    title: "DEPO PENGEMBANG",
+    price: "Kualifikasi khusus",
+    items: [
+      "Mapping area kota",
+      "Minimal 200 unit booth",
+      "Kapasitas freezer besar",
+      "Hak klaim reward distribusi",
+    ],
+  },
+];
 
 export default function KemitraanPage() {
   return (
     <>
-      <section className="bg-[var(--brand-green)] text-white">
-        <div className="max-w-7xl mx-auto px-6 py-20">
+      <section className="relative h-[60vh] min-h-[400px] text-white">
+        <Image
+          src="/banner-chiboy.png"
+          alt="Banner Chiboy"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
           <h1 className="text-4xl md:text-5xl font-bold max-w-3xl">
             Peluang Usaha dengan Sistem Kemitraan Chiboy
           </h1>
@@ -157,6 +199,47 @@ export default function KemitraanPage() {
           </div>
         </div>
       </section>
+
+      <section className="bg-neutral-100 py-20 px-6">
+      <div className="max-w-4xl mx-auto text-center mb-14">
+        <h2 className="text-4xl font-semibold text-neutral-900 mb-4">
+          Paket Mitra Chiboy
+        </h2>
+        <p className="text-neutral-600">
+          Pilih paket kemitraan yang sesuai dengan kapasitas bisnis Anda.
+        </p>
+      </div>
+
+      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        {packages.map((pkg) => (
+          <div
+            key={pkg.title}
+            className="bg-white border rounded-xl p-8 flex flex-col justify-between"
+          >
+            <div>
+              <h3 className="text-xl font-semibold mb-2 text-slate-800">{pkg.title}</h3>
+              <p className="text-neutral-500 mb-6">{pkg.price}</p>
+
+              <ul className="space-y-3 text-sm text-neutral-700">
+                {pkg.items.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span>✔</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <a
+              href="#"
+              className="mt-8 border border-neutral-900 text-center py-3 rounded-md hover:bg-neutral-900 text-black hover:text-white transition"
+            >
+              Chat via WhatsApp
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
 
       <section className="max-w-7xl mx-auto px-6 py-20">
         <h2 className="text-3xl font-bold mb-10 text-center text-slate-800">

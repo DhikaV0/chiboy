@@ -1,18 +1,9 @@
 export default function KontakPage() {
   return (
     <>
-      <section className="bg-[var(--brand-orange)] text-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <h1 className="text-4xl font-bold">Kontak Kami</h1>
-          <p className="mt-4 max-w-2xl text-white/90">
-            Hubungi Chiboy untuk informasi produk maupun peluang kemitraan.
-          </p>
-        </div>
-      </section>
-
       <section className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12">
         <div>
-          <h2 className="text-2xl font-semibold mb-6 text-slate-800">
+          <h2 className="text-2xl font-semibold mb-6 text-black">
             Informasi Kontak
           </h2>
 

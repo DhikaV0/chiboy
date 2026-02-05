@@ -1,9 +1,21 @@
+import Image from "next/image";
+
 export default function TentangPage() {
   return (
     <>
-      <section className="bg-[var(--brand-green)] text-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <h1 className="text-4xl font-bold">Tentang Chiboy</h1>
+      <section className="relative h-[60vh] min-h-[400px] text-white">
+        <Image
+          src="/banner-chiboy.png"
+          alt="Banner Chiboy"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
+          <h1 className="text-4xl md:text-5xl font-bold max-w-3xl">
+            Tentang Chiboy
+          </h1>
           <p className="mt-4 max-w-2xl text-white/90">
             Mengenal lebih dekat perjalanan dan nilai yang dibangun oleh Chiboy.
           </p>
