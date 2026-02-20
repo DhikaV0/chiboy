@@ -6,30 +6,22 @@ const packages = [
     title: "RESELLER",
     price: "Mulai Rp1.200.000",
     items: [
-      "Booth portable aluminium",
-      "Peralatan kukus & kompor",
+      "1 Booth portable",
+      "1 Set Kompor",
+      "1 Dangdang",
       "Bahan baku awal",
-      "Dokumen kemitraan & SOP",
+      "Dokumen kemitraan",
     ],
   },
   {
     title: "AGEN",
-    price: "Mulai Rp7.500.000",
+    price: "Mulai Rp9.500.000",
     items: [
       "10 Booth portable",
-      "Freezer minimal 450L",
-      "Perlengkapan branding",
-      "Pendampingan tim manajemen",
-    ],
-  },
-  {
-    title: "DEPO PENGEMBANG",
-    price: "Kualifikasi khusus",
-    items: [
-      "Mapping area kota",
-      "Minimal 200 unit booth",
-      "Kapasitas freezer besar",
-      "Hak klaim reward distribusi",
+      "10 Dangdang",
+      "10 Pasang Botol Saus Dan Kecap",
+      "1 pcs Kaos Chiboy Management",
+      "Sertifikat Kemitraan",
     ],
   },
 ];
@@ -65,26 +57,21 @@ export default function KemitraanPage() {
           Kemitraan Chiboy adalah bentuk kerja sama usaha yang saling
           menguntungkan antara Chiboy sebagai produsen dengan mitra usaha
           dalam mendistribusikan produk cilok dan bakso colok ke konsumen.
-          Sistem ini dirancang agar mudah dijalankan, baik untuk pemula
-          maupun pelaku usaha yang ingin berkembang.
+          Sistem ini dirancang agar mudah dijalankan, dan cocok untuk para pelaku usaha
+          yang ingin memulai bisnis jajanan.
         </p>
       </section>
 
       <section className="bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <h2 className="text-3xl font-bold mb-10 text-center text-slate-800">
+          <h2 className="text-3xl font-bold text-center text-slate-800">
             Jenis Kemitraan
           </h2>
+          <p className="mt-4 text-slate-600 max-w-3xl mx-auto text-center mb-10">
+            Kami menyediakan dua jenis kemitraan yang dapat dipilih sesuai dengan kapasitas dan kebutuhan bisnis Anda.
+          </p>
 
-          <div className="grid md:grid-cols-4 gap-6">
-            <KemitraanCard
-              title="Distribusi Center (DC)"
-              desc="Pusat pendistribusian utama untuk area tertentu."
-            />
-            <KemitraanCard
-              title="Depo Pengembang"
-              desc="Pendistribusi tingkat kota yang membina agen."
-            />
+          <div className="grid align-center md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <KemitraanCard
               title="Agen"
               desc="Pendistribusi tingkat kecamatan dan pemasok reseller."
@@ -184,12 +171,20 @@ export default function KemitraanPage() {
 
             <RegionCard
               title="Banten"
-              areas={["Serang", "Petir", "Cilegon", "Pondok Cabe"]}
+              areas={[
+                "Serang", 
+                "Petir", 
+                "Cilegon", 
+                "Pondok Cabe"
+              ]}
             />
 
             <RegionCard
               title="Purwakarta"
-              areas={["Sadang", "Babakan Cikao"]}
+              areas={[
+                "Sadang", 
+                "Babakan Cikao"
+              ]}
             />
 
             <RegionCard
@@ -210,13 +205,13 @@ export default function KemitraanPage() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+      <div className="max-w-5xl mx-auto grid sm:grid-cols-2 gap-8">
         {packages.map((pkg) => (
           <div
             key={pkg.title}
             className="bg-white border rounded-xl p-8 flex flex-col justify-between"
           >
-            <div>
+            <div >
               <h3 className="text-xl font-semibold mb-2 text-slate-800">{pkg.title}</h3>
               <p className="text-neutral-500 mb-6">{pkg.price}</p>
 

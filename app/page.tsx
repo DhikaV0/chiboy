@@ -8,6 +8,12 @@ const certificates = [
   { title: "HALAL", image: "/halal-logo.svg" },
 ];
 
+export const metadata = {
+  title: "Chiboy Bakso Rame - Kemitraan Cilok & Bakso Colok Terpercaya",
+  description:
+    "Chiboy Bakso Rame adalah produsen cilok dan bakso colok dengan sistem kemitraan terpercaya. Produk halal, tanpa pengawet, dan siap dikembangkan di berbagai daerah Indonesia.",
+};
+
 export default function HomePage() {
   return (
     <>
@@ -40,6 +46,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="max-w-4xl mx-auto px-6 py-16">
+        <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
+          <iframe
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/7DK0bWSHk50?si=BJd3NZSoR-D4DgEz"
+            title="Company Profile Chiboy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </section>
+
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold text-slate-800">
@@ -64,7 +82,7 @@ export default function HomePage() {
 
         <div className="mt-10 text-center">
           <a
-            href="/mitra"
+            href="/dokumentasi"
             className="inline-block bg-[var(--brand-green)] text-white px-8 py-3 rounded-md font-semibold"
           >
             Lihat Dokumentasi Lengkap
@@ -93,6 +111,26 @@ export default function HomePage() {
       </section>
 
       <CTA />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Chiboy",
+            url: "https://chiboy.vercel.app",
+            logo: "https://chiboy.vercel.app/banner-chiboy.png",
+            description:
+              "Produsen cilok dan bakso colok dengan sistem kemitraan terpercaya.",
+            sameAs: [
+              "https://www.instagram.com/chiboy_baksorame.official",
+              "https://www.youtube.com/@chiboychannelofficial6347",
+              "https://www.facebook.com/profile.php?id=100089692304994",
+              "https://www.tiktok.com/@chiboy.bakso.rame"
+            ]
+          }),
+        }}
+      />
     </>
   );
   function CertificateCard({ title, image }: { title: string; image: string }) {

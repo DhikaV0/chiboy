@@ -40,6 +40,9 @@ export default function KontakPage() {
               <a href="https://www.youtube.com/@chiboychannelofficial6347" target="_blank">
                   <img src="/youtube.svg" alt="YouTube" className="w-6 h-6 inline-block mr-2" />
               </a>
+              <a href="https://www.tiktok.com/@chiboy.bakso.rame" target="_blank">
+                  <img src="/tiktok.svg" alt="TikTok" className="w-6 h-6 inline-block mr-2" />
+              </a>
             </div>
           </ul>
         </div>

@@ -56,6 +56,8 @@ function NavLinks({ onClick }: { onClick?: () => void }) {
       <Link href="/tentang" onClick={onClick}>Tentang</Link>
       <Link href="/produk" onClick={onClick}>Produk</Link>
       <Link href="/kemitraan" onClick={onClick}>Kemitraan</Link>
+      <Link href="/dokumentasi" onClick={onClick}>Dokumentasi</Link>
+      <Link href="/testimoni" onClick={onClick}>Testimoni</Link>
       <Link href="/kontak" onClick={onClick}>Kontak</Link>
     </>
   );
