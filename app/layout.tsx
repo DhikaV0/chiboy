@@ -6,8 +6,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   metadataBase: new URL("https://chiboy.vercel.app"),
 
+  verification: {
+    google: "V-J_NTZUuZF8JcJjVimA8XEr3TA1BO03Mu5FEm0OqfM"
+  },
+
   title: {
-    default: "Chiboy | Kemitraan Cilok & Bakso Colok Berkualitas",
+    default: "Chiboy Bakso Rame | Kemitraan Cilok & Bakso Colok Berkualitas",
     template: "%s | Chiboy Cilok & Bakso Colok",
   },
 
