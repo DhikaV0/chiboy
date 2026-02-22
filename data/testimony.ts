@@ -2,7 +2,7 @@ export const testimony = [
   {
     name: "Ibu Sripati Marliza, SH",
     description: "Notaris Kabupaten Bogor",
-    text: "Baksonya enak, rasanya enak dan rasa dagingnya terasa sekali, pkoknya wajib dicoba deh.",
+    text: "Baksonya enak, rasanya enak dan rasa dagingnya terasa sekali, pokoknya wajib dicoba deh.",
   },
   {
     name: "Ibu Melani",

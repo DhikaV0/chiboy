@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { products } from "@/data/products";
+
 export default function ProdukPage() {
   return (
     <>
@@ -26,18 +28,38 @@ export default function ProdukPage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <h2 className="text-4xl font-bold mb-10 text-slate-800">Produk</h2>
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-800">
+            Produk Kami
+          </h2>
+          <p className="mt-4 text-slate-600 max-w-2xl mx-auto">
+            Pilihan produk unggulan Chiboy yang telah digunakan oleh berbagai mitra.
+          </p>
+        </div>
 
-        <div
-          className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide scroll-smooth"
-        >
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, idx) => (
-            <ProductCard
+            <div
               key={idx}
-              title={product.title}
-              desc={product.desc}
-              image={product.image}
-            />
+              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100"
+            >
+              <div className="relative aspect-[4/3]">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+          
+              <div className="p-5">
+                <h3 className="text-lg font-semibold text-slate-800">
+                  {product.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">
+                  {product.desc}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -97,40 +119,6 @@ function ProductCard({
     </div>
   );
 }
-
-const products = [
-  {
-    title: "Cilok",
-    desc: "Cilok dengan rasa gurih dan kenyal.",
-    image: "/placeholder.png",
-  },
-  {
-    title: "Bakso Colok",
-    desc: "Bakso colo k favorit semua kalangan.",
-    image: "/placeholder.png",
-  },
-  {
-    title: "Cilok Pedas",
-    desc: "Varian cilok dengan sambal khas.",
-    image: "/placeholder.png",
-  },
-  {
-    title: "Bakso Original",
-    desc: "Bakso original tanpa pengawet.",
-    image: "/placeholder.png",
-  },
-  {
-    title: "Bakso Original",
-    desc: "Bakso original tanpa pengawet.",
-    image: "/placeholder.png",
-  },
-    {
-      title: "Bakso Original",
-      desc: "Bakso original tanpa pengawet.",
-      image: "/placeholder.png",
-    },
-];
-
 
 function FeatureItem({
   title,

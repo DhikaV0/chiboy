@@ -66,9 +66,9 @@ export default function DokumentasiPage() {
       </section>
 
       {/* FOTO GRID */}
-      <section className="bg-emerald-50">
+      <section className="bg-slate-50">
         <div className="max-w-7xl mx-auto px-6 py-16">
-          <h2 className="text-2xl font-semibold text-emerald-700 mb-10">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-10">
             Dokumentasi Kegiatan
           </h2>
 
