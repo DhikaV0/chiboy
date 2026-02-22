@@ -1,43 +1,11 @@
 import Image from "next/image";
-
-const testimonials = [
-  {
-    name: "Ibu Sripati Marliza, SH",
-    description: "Notaris Kabupaten Bogor",
-    text: "Baksonya enak, rasanya enak dan rasa dagingnya terasa sekali, pkoknya wajib dicoba deh.",
-  },
-  {
-    name: "Ibu Melani",
-    description: "Anggota Komunitas Gowes",
-    text: "Rasanya enak banget, cocok dipesan jika ada acara seperti pengajian dirumah rumah.",
-  },
-  {
-    name: "Ibu Vivi",
-    description: "Ibu Rumah Tangga",
-    text: "Coba ikut bazaar di tapos dan kebetulan ketemu booth Chiboy, pas saya cobain, ternyata enak dan bikin nagih.",
-  },
-  {
-    name: "Ibu Tuty",
-    description: "Owner Pawen Putri",
-    text: "Ciloknya enak, lembut dan gurih, untuk yang tertarik bermitra dengan Chiboy, langsung saja hubungi kontaknya.",
-  },
-  {
-    name: "Ibu Ida",
-    description: "Reseller Chiboy",
-    text: "Semenjak ada Chiboy, warung saya gk pernah sepi pelanggan karena aroma cilok nya yang enak dan bikin orang dateng terus.",
-  },
-  {
-    name: "Pak Palahudin",
-    description: "Guru SMK IT Tazakka",
-    text: "Saya coba makan Chiboy, cilok dan bakso colok yes, setelah dicoba, rasanya enak sekali, gurih dan dagingnya terasa sekali.",
-  },
-];
+import { testimony as testimonials } from "@/data/testimony";
 
 export default function TestimoniPage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[50vh] min-h-[350px] text-white">
+      <section className="relative h-[5vh] min-h-[350px] text-white">
         <Image
           src="/banner-chiboy.png"
           alt="Testimoni Mitra"
@@ -45,11 +13,14 @@ export default function TestimoniPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Testimoni Mitra Chiboy
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
+          <h1 className="text-4xl md:text-5xl font-bold max-w-3xl">
+            Testimoni
           </h1>
+          <p className="mt-4 max-w-2xl text-white">
+            Apa kata mitra dan pelanggan kami tentang pengalaman mereka dengan
+          </p>
         </div>
       </section>
 

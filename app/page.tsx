@@ -1,6 +1,8 @@
 import Hero from "@/components/sections/Hero";
 import CTA from "@/components/sections/CTA";
 import Image from "next/image";
+import { documentation, documentation as photos } from "@/data/documentation";
+import Link from "next/link";
 
 const certificates = [
   { title: "HKI", image: "/hki-logo.svg" },
@@ -70,23 +72,28 @@ export default function HomePage() {
         </div>
 
         <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-4">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+          {documentation.slice(0, 6).map((item, i) => (
             <div
-              key={item}
-              className="min-w-[220px] aspect-square bg-slate-100 rounded-lg flex items-center justify-center text-slate-400 text-sm"
+              key={i}
+              className="min-w-[220px] aspect-square relative rounded-xl overflow-hidden shadow-md hover:shadow-lg transition"
             >
-              Foto Mitra
+              <Image
+                src={item.src}
+                alt={item.desc}
+                fill
+                className="object-cover"
+              />
             </div>
           ))}
         </div>
-
+        
         <div className="mt-10 text-center">
-          <a
+          <Link
             href="/dokumentasi"
-            className="inline-block bg-[var(--brand-green)] text-white px-8 py-3 rounded-md font-semibold"
+            className="inline-block bg-[var(--brand-green)] text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 transition"
           >
             Lihat Dokumentasi Lengkap
-          </a>
+          </Link>
         </div>
       </section>
 

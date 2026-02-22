@@ -1,28 +1,22 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
-
-const certificates = [
-  { title: "HKI", image: "/hki-logo.svg" },
-  { title: "DINKES", image: "/dinkes-logo.svg" },
-  { title: "HALAL", image: "/halal-logo.svg" },
-];
-
-const photosLeft = [
-  {src: "", desc: ""},
-  {src: "", desc: ""},
-  {src: "", desc: ""}
-];
-
-const photosRight = [
-  {src: "", desc: ""},
-  {src: "", desc: ""},
-  {src: "", desc: ""}
-];
+import { documentation as photos } from "@/data/documentation";
 
 export default function DokumentasiPage() {
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+
+  const certificates = [
+    { title: "HKI", image: "/hki-logo.svg" },
+    { title: "DINKES", image: "/dinkes-logo.svg" },
+    { title: "HALAL", image: "/halal-logo.svg" },
+  ];
+
   return (
     <>
       {/* HERO */}
-      <section className="relative h-[50vh] min-h-[350px] text-white">
+      <section className="relative h-[5vh] min-h-[350px] text-white">
         <Image
           src="/banner-chiboy.png"
           alt="Dokumentasi Chiboy"
@@ -31,16 +25,23 @@ export default function DokumentasiPage() {
           priority
         />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
-          <h1 className="text-4xl md:text-5xl font-bold">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 h-full flex flex-col justify-center">
+          <h1 className="text-4xl md:text-5xl font-bold max-w-3xl">
             Dokumentasi & Legalitas
           </h1>
+          <p className="mt-4 max-w-2xl text-white">
+            Kumpulan foto foto Dokumentasi kegiatan yang di ambil oleh tim Chiboy 
+            serta legalitas produk yang kami miliki.
+          </p>
         </div>
       </section>
 
       {/* LEGALITAS */}
       <section className="bg-slate-50 border-y">
         <div className="max-w-7xl mx-auto px-6 py-10">
+          <h2 className="text-2xl font-semibold text-slate-800 mb-6">
+            Legalitas Produk
+          </h2>
           <div className="flex gap-10 overflow-x-auto scrollbar-hide items-center">
             {certificates.map((item, i) => (
               <div
@@ -65,59 +66,56 @@ export default function DokumentasiPage() {
       </section>
 
       {/* FOTO GRID */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-2 gap-8">
+      <section className="bg-emerald-50">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <h2 className="text-2xl font-semibold text-emerald-700 mb-10">
+            Dokumentasi Kegiatan
+          </h2>
 
-          {/* Column 1 */}
-          <div className="flex md:flex-col gap-6 overflow-x-auto md:overflow-visible scrollbar-hide">
-            {photosLeft.map((item, i) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {photos.map((item, i) => (
               <div
                 key={i}
-                className="min-w-[250px] md:min-w-0 flex-shrink-0"
+                onClick={() => setActiveImage(item.src)}
+                className="cursor-pointer bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-emerald-100"
               >
-                <div className="relative aspect-square rounded-lg overflow-hidden">
+                <div className="relative aspect-[4/3]">
                   <Image
                     src={item.src}
                     alt={item.desc}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 250px, 50vw"
                   />
                 </div>
-            
-                <p className="mt-2 text-sm text-slate-600">
-                  {item.desc}
-                </p>
+                <div className="p-4">
+                  <p className="text-sm text-gray-700">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
-
-          {/* Column 2 */}
-          <div className="flex md:flex-col gap-6 overflow-x-auto md:overflow-visible scrollbar-hide">
-            {photosLeft.map((item, i) => (
-              <div
-                key={i}
-                className="min-w-[250px] md:min-w-0 flex-shrink-0"
-              >
-                <div className="relative aspect-square rounded-lg overflow-hidden">
-                  <Image
-                    src={item.src}
-                    alt={item.desc}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 250px, 50vw"
-                  />
-                </div>
-            
-                <p className="mt-2 text-sm text-slate-600">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
         </div>
       </section>
+
+      {/* MODAL PREVIEW */}
+      {activeImage && (
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-6"
+          onClick={() => setActiveImage(null)}
+        >
+          <div className="relative max-w-4xl w-full">
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+              <Image
+                src={activeImage}
+                alt="Preview"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

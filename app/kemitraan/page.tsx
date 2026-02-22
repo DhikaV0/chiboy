@@ -1,35 +1,11 @@
 import CTA from "@/components/sections/CTA";
 import Image from "next/image";
-
-const packages = [
-  {
-    title: "RESELLER",
-    price: "Mulai Rp1.200.000",
-    items: [
-      "1 Booth portable",
-      "1 Set Kompor",
-      "1 Dangdang",
-      "Bahan baku awal",
-      "Dokumen kemitraan",
-    ],
-  },
-  {
-    title: "AGEN",
-    price: "Mulai Rp9.500.000",
-    items: [
-      "10 Booth portable",
-      "10 Dangdang",
-      "10 Pasang Botol Saus Dan Kecap",
-      "1 pcs Kaos Chiboy Management",
-      "Sertifikat Kemitraan",
-    ],
-  },
-];
+import { packages } from "@/data/packages";
 
 export default function KemitraanPage() {
   return (
     <>
-      <section className="relative h-[60vh] min-h-[400px] text-white">
+      <section className="relative h-[5vh] min-h-[350px] text-white">
         <Image
           src="/banner-chiboy.png"
           alt="Banner Chiboy"

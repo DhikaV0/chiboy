@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function TentangPage() {
   return (
     <>
-      <section className="relative h-[60vh] min-h-[400px] text-white">
+      <section className="relative h-[5vh] min-h-[350px] text-white">
         <Image
           src="/banner-chiboy.png"
           alt="Banner Chiboy"

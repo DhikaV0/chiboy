@@ -2,14 +2,14 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[70vh] text-white overflow-hidden">
+    <section className="relative w-full min-h-[95vh] text-white overflow-hidden">
       <img
         src="/banner-chiboy.png"
         alt="Banner"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/40" />
-      <div className="relative max-w-7xl mx-auto px-6 py-24">
+      <div className="relative max-w-7xl mx-auto px-6 py-45">
         <h1 className="text-4xl md:text-5xl font-bold leading-tight max-w-2xl">
           Produsen Cilok & Bakso Colok dengan Sistem Kemitraan
         </h1>
