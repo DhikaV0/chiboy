@@ -68,6 +68,19 @@ export const metadata: Metadata = {
   },
 };
 
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Chiboy",
+      alternateName: "Chiboy Bakso Rame",
+      url: "https://chiboy.vercel.app",
+    }),
+  }}
+/>  
+
 export default function RootLayout({
   children,
 }: {
